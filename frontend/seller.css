@@ -1,0 +1,60 @@
+/* Seller Admin Specific Overrides */
+.seller-nav { background-color: #1e293b; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
+.seller-nav .logo { color: #fff; display: flex; align-items: center;}
+.seller-nav .logo span { 
+    font-size: 12px; color: #6ee7b7; background: rgba(16, 185, 129, 0.2); 
+    padding: 4px 10px; border-radius: 6px; margin-left: 12px; font-weight: 700; letter-spacing: 0.5px;
+}
+
+.seller-nav .outline-btn { color: white; border-color: #475569; }
+.seller-nav .outline-btn:hover { background-color: #334155; }
+
+.admin-sidebar { background-color: #334155; color: #f8fafc; border-right: none;}
+.admin-sidebar h3 { color: #94a3b8; border-bottom: 2px solid #475569; padding-bottom: 12px;}
+.admin-sidebar li { color: #cbd5e1; border-bottom: 1px solid #475569; margin-bottom: 5px;}
+.admin-sidebar li:hover, .admin-sidebar li.active { background-color: #10b981; color: white; border-color: transparent;}
+
+.header-action { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.header-action h2 { color: #1e293b; font-size: 24px;}
+
+/* Custom Tables */
+.admin-table { 
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
+    border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0;
+}
+.admin-table th { 
+    background-color: #f1f5f9; color: #475569; font-weight: 700; 
+    text-align: left; padding: 18px 15px; border-bottom: 2px solid #e2e8f0; 
+}
+.admin-table td { padding: 16px 15px; border-bottom: 1px solid #f1f5f9; color: #334155; vertical-align: middle;}
+.admin-table tr:hover { background-color: #f8fafc; }
+
+/* Forms Configuration */
+.form-group { margin-bottom: 20px; }
+.form-row { display: flex; gap: 15px; }
+.form-row .form-group { flex: 1; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #475569; }
+.form-group input { 
+    width: 100%; padding: 12px; border: 1px solid #cbd5e1; 
+    border-radius: 6px; font-size: 15px; transition: all 0.2s;
+}
+.form-group input:focus { border-color: #10b981; outline: none; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); }
+.full-width { width: 100%; margin-top: 15px; padding: 15px; font-size: 16px;}
+
+/* Status and Buttons */
+.status-select { 
+    padding: 8px 10px; border-radius: 6px; border: 1px solid #cbd5e1; 
+    font-size: 14px; font-weight: 600; color: #334155; outline:none;
+}
+.status-select:focus { border-color: #10b981; }
+
+.edit-btn { background: #f59e0b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 13px;}
+.edit-btn:hover { background: #d97706; }
+.update-btn { background: #3b82f6; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 13px; margin-left: 5px;}
+.update-btn:hover { background: #2563eb; }
+
+/* Expiry / Stock visual indicators in table */
+.text-danger { color: #ef4444; font-weight: 700; }
+.text-warning { color: #f59e0b; font-weight: 700; }
+.text-success { color: #10b981; font-weight: 700; }

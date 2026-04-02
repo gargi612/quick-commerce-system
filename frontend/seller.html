@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Quick Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="seller.css">
+</head>
+<body>
+    <nav class="navbar seller-nav">
+        <div class="logo">QuickCommerce <span>SELLER PORTAL</span></div>
+        <div class="nav-links">
+            <!-- Switches Roles -->
+            <a href="index.html" class="outline-btn" style="text-decoration:none; padding:8px 15px;">👁️ Switch to User Shopping</a>
+            <button class="outline-btn" onclick="logout()" style="text-decoration:none; padding:8px 15px; border:1px solid #e74c3c; border-radius:5px; color:#e74c3c; margin-left:10px; cursor:pointer; background:transparent;">Logout</button>
+        </div>
+    </nav>
+
+    <div class="main-container seller-container">
+        <!-- Seller Sidebar -->
+        <aside class="sidebar admin-sidebar">
+            <h3>Management</h3>
+            <ul id="adminNav">
+                <li class="active" onclick="switchView('products', this)">📦 Manage Inventory</li>
+                <li onclick="switchView('orders', this)">📝 Customer Orders</li>
+                <li onclick="switchView('payments', this)">💳 Payment Records</li>
+            </ul>
+        </aside>
+
+        <!-- Seller Content -->
+        <main class="content admin-content">
+            
+            <!-- Products View -->
+            <div id="view-products" class="admin-view">
+                <div class="header-action">
+                    <h2>Inventory Management</h2>
+                    <button class="solid-btn" onclick="openProductModal()">+ Add New Product</button>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th> <th>Name</th> <th>Price</th> <th>Stock</th> <th>Expiry Date</th> <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProductsBody">
+                        <!-- Loaded dynamically via seller.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Orders View -->
+            <div id="view-orders" class="admin-view" style="display:none;">
+                <h2>All Customer Orders</h2>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th> <th>Amount</th> <th>Date</th> <th>Delivery Status</th> <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminOrdersBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Payments View -->
+            <div id="view-payments" class="admin-view" style="display:none;">
+                <h2>Payment Log</h2>
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>Payment ID (Order)</th> <th>Total Amount</th> <th>Status</th> <th>Action</th></tr>
+                    </thead>
+                    <tbody id="adminPaymentsBody"></tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Add/Edit Product Modal Overlay -->
+    <div class="overlay" id="productModalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Product</h2>
+                <button class="close-btn" onclick="closeProductModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="formProductId">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" id="formName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Price ($)</label>
+                            <input type="number" step="0.01" id="formPrice" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Stock Quantity</label>
+                            <input type="number" id="formStock" value="10" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="date" id="formExpiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Image URL (Optional)</label>
+                        <input type="url" id="formImage" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <button type="submit" class="solid-btn full-width">Save Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="seller.js"></script>
+</body>
+</html>

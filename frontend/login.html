@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Quick Commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 { margin-top: 0; color: #333; }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-user { background: #27ae60; color: white; }
+        .btn-user:hover { background: #219653; }
+        .btn-seller { background: #2c3e50; color: white; }
+        .btn-seller:hover { background: #1a252f; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>Select Your Role</h2>
+        <p>Welcome to Quick Commerce Platform</p>
+
+        <button class="btn btn-user" onclick="loginAs('user')">Login as User</button>
+        <button class="btn btn-seller" onclick="loginAs('seller')">Login as Seller</button>
+    </div>
+
+    <script>
+        // Check if already logged in
+        window.onload = () => {
+            const currentRole = localStorage.getItem('role');
+            if (currentRole === 'user') window.location.href = 'index.html';
+            else if (currentRole === 'seller') window.location.href = 'seller.html';
+        };
+
+        function loginAs(role) {
+            localStorage.setItem('role', role);
+            if (role === 'seller') {
+                window.location.href = 'seller.html';
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

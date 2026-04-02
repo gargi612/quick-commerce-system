@@ -1,0 +1,28 @@
+# Node.js dependencies
+backend/node_modules/
+
+# Environment variables
+backend/.env
+.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Python cache (if ever generated)
+__pycache__/
+*.pyc

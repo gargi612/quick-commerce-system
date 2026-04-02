@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">QuickCommerce</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for products by name...">
+        </div>
+        <div class="nav-links">
+            <a href="seller.html" class="text-btn outline-btn" style="text-decoration:none; padding:8px 15px; border:1px solid #ccc; border-radius:5px; margin-right:10px;">🛠️ Seller Mode</a>
+            <button class="text-btn" id="myOrdersBtn">📦 My Orders</button>
+            <div class="cart-btn">
+                <button id="cartButton">🛒 Cart <span id="cartCount">(0)</span></button>
+            </div>
+            <button class="text-btn outline-btn" onclick="logout()" style="text-decoration:none; padding:8px 15px; border:1px solid #e74c3c; border-radius:5px; color:#e74c3c; margin-left:10px; cursor:pointer;">Logout</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Shop by Category</h3>
+            <ul id="categoryList">
+                <li>Loading categories...</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div id="productGrid" class="product-grid">
+                <!-- Products will be injected here via JS -->
+                <p>Loading products...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="overlay" id="cartOverlay">
+        <div class="side-panel">
+            <div class="panel-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn" id="closeCartBtn">&times;</button>
+            </div>
+            <div class="panel-body" id="cartItemsContainer">
+                <p>Your cart is empty.</p>
+            </div>
+            <div class="panel-footer">
+                <div class="payment-selection">
+                    <label for="paymentMethod">Payment:</label>
+                    <select id="paymentMethod">
+                        <option value="Card">Credit/Debit Card</option>
+                        <option value="UPI">UPI</option>
+                        <option value="COD">Cash on Delivery</option>
+                    </select>
+                </div>
+                <h3>Total: $<span id="cartTotalPrice">0.00</span></h3>
+                <div class="cart-actions">
+                    <button id="clearCartBtn" class="outline-btn">Clear Cart</button>
+                    <button id="placeOrderBtn" class="solid-btn">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Modal Overlay -->
+    <div class="overlay" id="ordersOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>My Orders History</h2>
+                <button class="close-btn" id="closeOrdersBtn">&times;</button>
+            </div>
+            <div class="modal-body" id="ordersListContainer">
+                <p>Loading your orders...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script src="script.js"></script>
+</body>
+</html>
